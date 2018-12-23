@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Toggle from './components/ToggleRPC';
 
 class App extends Component {
   render() {
@@ -19,6 +20,15 @@ class App extends Component {
           >
             Learn React
           </a>
+          <Toggle>
+            {/* EXAMPLE FOR TOGGLE COMPONENT USE (RENDER PROPS CHILDREN) */}
+          {({ on, toggle }) => (
+            <div>
+              {on && <h1>Show Me</h1>}
+              <button onClick={toggle}>Show / Hide</button>
+            </div>
+          )}
+        </Toggle>
         </header>
       </div>
     );
