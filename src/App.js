@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Toggle from './components/ToggleRPC';
+import { Modal, Toggle } from './components';
 
 class App extends Component {
   render() {
@@ -23,10 +23,12 @@ class App extends Component {
           <Toggle>
             {/* EXAMPLE FOR TOGGLE COMPONENT USE (RENDER PROPS CHILDREN) */}
           {({ on, toggle }) => (
-            <div>
-              {on && <h1>Show Me</h1>}
-              <button onClick={toggle}>Show / Hide</button>
-            </div>
+            <Fragment>
+              <button onClick={toggle}>Login</button>
+              <Modal on={on} toggle={toggle}>
+                <h1>still here</h1>
+              </Modal>
+            </Fragment>
           )}
         </Toggle>
         </header>
